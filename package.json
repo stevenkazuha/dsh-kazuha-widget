@@ -1,0 +1,22 @@
+{
+  "name": "@local/kazuha-widget",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "A Q-version Kazuha corner widget for the Harness Web GUI.",
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.png"
+  },
+  "files": ["index.js", "client.js", "pet.js", "cordis.patch.yml", "locale/*.json", "icon.png", "icon.svg"],
+  "dsh": {
+    "bundle": { "patch": "./cordis.patch.yml" },
+    "client": {
+      "platform": "web",
+      "immediately": true,
+      "inject": ["@deepseek-ai/dsh-client-ui-layout"]
+    }
+  }
+}
